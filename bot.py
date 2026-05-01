@@ -29,6 +29,8 @@ async def remind(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except:
         await update.message.reply_text("❌ Usage: /remind 1 Test")
 
+print("TOKEN VALUE:", TOKEN)
+
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
