@@ -1,14 +1,15 @@
 import asyncio
-import os
-from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 # Load .env file
-load_dotenv()
 
 # Get token from .env
-TOKEN = os.getenv("TOKEN")
+import os
+
+TOKEN = os.environ.get("TOKEN")
+
+print("TOKEN VALUE:", TOKEN)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
